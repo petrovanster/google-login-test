@@ -5,16 +5,16 @@ import './App.css';
 import store from "./store"
 import { Provider } from 'react-redux'
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import Main from "./Layout/Main"
+import App from "./App/App"
 
-function App() {
+function MainApp() {
   return (
     <Provider store={store}>
       <GoogleOAuthProvider clientId='267662242050-om1mvkvvhja7st12pjt0uo5o0sacnvft.apps.googleusercontent.com'>
-        <Main />
+        <App />
       </GoogleOAuthProvider>
     </Provider>
   );
 }
 
-export default App;
+export default MainApp;

@@ -1,6 +1,5 @@
 import SidebarSearchForm from "./SidebarSearchForm";
 import UserPanel from "./UserPanel"
-import Menu from "./Menu";
 
 const Sidebar = (props) => {
     return (
@@ -18,7 +17,7 @@ const Sidebar = (props) => {
 
                 <SidebarSearchForm />
 
-                <Menu />
+                {props.children}
             </div>
         </aside>
     );
