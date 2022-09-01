@@ -8,7 +8,7 @@ const InputField = (props) => {
     const onChange = (e) => {
         setText(e.target.value);
         if (props.onChange)
-            props.onChange(e.value)
+            props.onChange(e.target.value)
         if (props.validate) {
             let res = props.validate(e.target.value)
             if (res === "success")
@@ -27,11 +27,16 @@ const InputField = (props) => {
     if (props.size === "small")
         size = "-sm"
 
+    let inputType = "text";
+    if (props.password)
+        inputType = "password";
+
     return (
         <div className="form-group">
-            <label for="exampleInputEmail1">{props.label}</label>
-            <input type="email" className={"form-control" + size + " " + state} placeholder={props.placeholder} onChange={onChange} value={text} disabled={props.disabled ?? false} />
-        </div>
+            <label>{props.label}</label>
+            <input type={inputType} className={"form-control" + size + " " + state} placeholder={props.placeholder}
+                onChange={onChange} value={text} disabled={props.disabled ?? false} />
+        </div >
     );
 }
 

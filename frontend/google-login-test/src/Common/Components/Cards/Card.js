@@ -1,20 +1,23 @@
 import { React } from 'react'
+import Overlay from './Overlay';
 
 const Card = (props) => {
 
     return (
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">{props.title}</h3>
+        <div className="card card-primary">
+            <div className="card-header">
+                <h3 className="card-title">{props.title}</h3>
             </div>
             <div className='card-body'>
                 {props.children}
             </div>
             {props.footer &&
-                <div class="card-footer">
+                <div className="card-footer">
                     {props.footer}
                 </div>
             }
+            {props.isLoading && <Overlay />}
+
         </div>
     );
 }
